@@ -37,7 +37,8 @@ public partial class GameApp:Singleton<GameApp>
     /// </summary>
     private void StartGameLogic()
     {
-        
+        //加载场景
+        GameModule.UI.ShowUI<GameLogic.GameMainUI>();
     }
 
     /// <summary>

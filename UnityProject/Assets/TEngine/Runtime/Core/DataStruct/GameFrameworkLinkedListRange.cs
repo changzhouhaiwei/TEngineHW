@@ -12,8 +12,8 @@ namespace TEngine
     public readonly struct GameFrameworkLinkedListRange<T> : IEnumerable<T>, IEnumerable
     {
         private readonly LinkedListNode<T> _first;
-        private readonly LinkedListNode<T> _terminal;
 
+        private readonly LinkedListNode<T> _terminal;
         /// <summary>
         /// 初始化游戏框架链表范围的新实例。
         /// </summary>

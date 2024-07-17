@@ -1,0 +1,30 @@
+private static readonly
+
+readonly：字段只能在声明时或在包含它的类的构造函数中赋值。初始化后不能再修改。
+
+sealed: 密封，不能被继承。
+
+
+
+不能赋值修改指针，但是若是引用类型，可以调用方法改变 如。 private static readonly Dictionary
+
+
+public readonly struct
+	使用 readonly 修饰符声明 struct 的目的就是为了明确地声明一个不可变的值类型。
+	readonly 结构体的所有数据成员都必须是只读的：
+	所有字段声明都必须具有 readonly 修饰符
+	所有属性（包括自动实现的属性）都必须是只读的
+
+
+public sealed class  
+	不能被继承的类
+
+internal const int
+
+
+
+
+IEnumerable 
+
+
+泛型

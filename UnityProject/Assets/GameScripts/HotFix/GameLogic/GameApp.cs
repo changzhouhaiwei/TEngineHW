@@ -1,7 +1,10 @@
 using System.Collections.Generic;
+using System.Drawing;
 using System.Reflection;
 using GameBase;
+using GameLogic;
 using TEngine;
+using UnityEngine;
 
 /// <summary>
 /// 游戏App。
@@ -38,7 +41,15 @@ public partial class GameApp:Singleton<GameApp>
     private void StartGameLogic()
     {
         //加载场景
-        GameModule.UI.ShowUI<GameLogic.GameMainUI>();
+        // GameModule.UI.ShowUI<GameLogic.GameMainUI>();
+        
+        //
+        GameModule.Scene.LoadScene("LoginScene");
+
+        var str = GameModule.Scene.CurrentMainSceneName;
+        
+        Debug.Log(("sceneName = {0}",str));
+        
     }
 
     /// <summary>

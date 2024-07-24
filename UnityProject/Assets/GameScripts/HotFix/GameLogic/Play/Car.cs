@@ -1,21 +1,31 @@
 ﻿using System;
+using Sirenix.OdinInspector;
+using TEngine;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace GameLogic
 {
+    
+    [DisallowMultipleComponent]
     public class Car : MonoBehaviour
     {
         public void Awake()
         {
-            PlayMgr.Instance.AddCar(this);
+            AddTouch();
+        }
+
+        public void AddTouch()
+        {
+            EventTriggerListener.Get(gameObject).OnClick += CBTouch;
         }
         
         /// <summary>
         ///  点击
         /// </summary>
-        public void CBTouch()
+        public void CBTouch(GameObject obj)
         {
-            
+            Debug.Log("触摸了");
         }
 
         /// <summary>

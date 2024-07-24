@@ -13,8 +13,8 @@ namespace GameLogic
         /// <returns></returns>
         public async UniTask<Car> GetACar()
         {
-            var obj = await GameModule.Resource.LoadAssetAsync<GameObject>("BlueCar");
-            GameObject.Instantiate(obj);
+            var obj = await GameModule.Resource.LoadGameObjectAsync("BlueCar");
+            // GameObject.Instantiate(obj);
             return obj.AddComponent<Car>();
         }
     }

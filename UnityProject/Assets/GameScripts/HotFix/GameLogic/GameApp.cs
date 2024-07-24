@@ -40,16 +40,11 @@ public partial class GameApp:Singleton<GameApp>
     /// </summary>
     private void StartGameLogic()
     {
-        //加载场景
-        // GameModule.UI.ShowUI<GameLogic.GameMainUI>();
-        
-        //
-        GameModule.Scene.LoadScene("LoginScene");
-
-        var str = GameModule.Scene.CurrentMainSceneName;
-        
-        Debug.Log(("sceneName = {0}",str));
-        
+        // GameModule.Scene.LoadScene()
+        GameModule.Scene.LoadScene("GameScene");
+        // var str = GameModule.Scene.CurrentMainSceneName;
+        // Debug.Log(("sceneName = {0}",str));
+        PlayMgr.Instance.StartGame();
     }
 
     /// <summary>

@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using GameBase;
+using TEngine;
 using UnityEngine;
 
 namespace GameLogic
@@ -12,7 +13,9 @@ namespace GameLogic
         /// <returns></returns>
         public async UniTask<Car> GetACar()
         {
-            return new Car();
+            var obj = await GameModule.Resource.LoadAssetAsync<GameObject>("BlueCar");
+            GameObject.Instantiate(obj);
+            return obj.AddComponent<Car>();
         }
     }
 }

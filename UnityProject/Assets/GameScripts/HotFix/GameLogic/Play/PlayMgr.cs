@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using GameBase;
 using UnityEngine;
 
@@ -10,10 +11,28 @@ namespace GameLogic
         //初始化场景元素，汽车等
         //读取表格
     
-        public void InitField()
+        public async UniTask InitField()
         {
             //x的坐标是44.5 - 55.5  距离11 44.5 + (x - 1)
             //y的坐标是44.5 - 55.5  距离11 44.5 + (y - 1)
+            // var pos = 
+            for (int i = 0; i < 10; i++)
+            {
+                var carObj = await CarManager.Instance.GetACar();
+                AddCar(carObj);
+                carObj.transform.position = new Vector3(44.5f + i, 0f, 44.5f);
+            }
+            
+        }
+
+        public async UniTask PlayEnterAnim()
+        {
+            
+        }
+
+        public async UniTask StartTouch()
+        {
+            
         }
 
         public void AddCar(Car car)
@@ -25,10 +44,16 @@ namespace GameLogic
         {
             m_allCars.Remove(car);
         }
-
-        public void StartGame()
-        {
         
+        
+        /// <summary>
+        /// 使用UniTask 初始化游戏进程
+        /// </summary>
+        public async UniTask StartGame()
+        {
+            await InitField();
+            await PlayEnterAnim();
+            await StartTouch();
         }
     }
 }

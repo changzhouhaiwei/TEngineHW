@@ -5,9 +5,9 @@ namespace GameLogic
 {
     public class StuffHeafFactory : Singleton<StuffHeafFactory>
     {
-        public void CreateHead()
+        public IStuffHead CreateHead()
         {
-            
+            return new IteanHead();
         }
     }
 }

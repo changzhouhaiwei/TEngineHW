@@ -1,15 +1,8 @@
 ﻿namespace GameLogic
 {
-    public class IData
+    public interface IData
     {
-        void SetData()
-        {
-            
-        }
-
-        void SyncData()
-        {
-            
-        }
+        void SetData();
+        void SyncData();
     }
 }

@@ -12,6 +12,8 @@ namespace GameLogic
         private Text m_textA;
         private RectTransform m_rectB;
         private Button m_btnD;
+
+        private LoopListView m_listView;
         protected override void ScriptGenerator()
         {
             m_imgC = FindChildComponent<Image>("m_imgC");
@@ -19,6 +21,8 @@ namespace GameLogic
             m_rectB = FindChildComponent<RectTransform>("m_rectB");
             m_btnD = FindChildComponent<Button>("m_btnD");
             m_btnD.onClick.AddListener(OnClickDBtn);
+            
+            m_listView = gameObject.GetComponentInChildren<LoopListView>();
         }
         #endregion
 
@@ -28,5 +32,10 @@ namespace GameLogic
         }
         #endregion
 
+        void InitListView()
+        {
+            m_listView.SetListItemCount(10);
+        }
+        
     }
 }

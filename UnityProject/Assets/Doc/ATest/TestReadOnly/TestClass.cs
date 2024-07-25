@@ -30,7 +30,13 @@ public class TestClass : MonoBehaviour
         
         
         Debug.Log("start");
-        
+
+        GameObject A = null;
+        GameObject B = null;
+
+        //向右对齐
+        var c = A ?? (B??gameObject);
+        c.transform.localScale = new Vector3(2f,2f,2f);
     }
 
     // Update is called once per frame

@@ -45,6 +45,9 @@ public partial class GameApp:Singleton<GameApp>
         // var str = GameModule.Scene.CurrentMainSceneName;
         // Debug.Log(("sceneName = {0}",str));
         PlayMgr.Instance.StartGame();
+        
+        //展示UI        
+        GameModule.UI.ShowUI<GameMainUI>();
     }
 
     /// <summary>

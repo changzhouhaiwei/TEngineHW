@@ -26,4 +26,15 @@ public class QuickWay : MonoBehaviour
             EditorSceneManager.OpenScene("Assets/AssetRaw/Scenes/GameScene.unity");
         }
     }
+
+    [MenuItem("StartScene/Go TestScene", false, 1112)]
+    static void GoTestScene()
+    {
+        if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+        {
+            EditorSceneManager.OpenScene("Assets/Doc/ATest/ATestScene.unity");
+        }
+    }
+    
+    
 }

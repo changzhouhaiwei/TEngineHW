@@ -21,6 +21,7 @@ namespace GameLogic
                 var carObj = await CarManager.Instance.GetACar();
                 AddCar(carObj);
                 carObj.transform.position = new Vector3(44.5f, 0f, 44.5f + i);
+                carObj.transform.localRotation = Quaternion.Euler(0,90f,0);
             }
             
         }

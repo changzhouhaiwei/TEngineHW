@@ -47,7 +47,7 @@ public partial class GameApp:Singleton<GameApp>
         PlayMgr.Instance.StartGame();
         
         //展示UI        
-        GameModule.UI.ShowUI<GameMainUI>();
+        // GameModule.UI.ShowUI<GameMainUI>();
     }
 
     /// <summary>

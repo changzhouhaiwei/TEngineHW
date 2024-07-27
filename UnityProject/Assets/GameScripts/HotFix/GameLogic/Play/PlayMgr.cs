@@ -16,12 +16,19 @@ namespace GameLogic
             //x的坐标是44.5 - 55.5  距离11 44.5 + (x - 1)
             //y的坐标是44.5 - 55.5  距离11 44.5 + (y - 1)
             // var pos = 
-            for (int i = 0; i < 10; i++)
+            // for (int i = 0; i < 10; i++)
+            // {
+            //     var carObj = await CarManager.Instance.GetACar();
+            //     AddCar(carObj);
+            //     carObj.transform.position = new Vector3(44.5f, 0f, 44.5f + i);
+            //     carObj.transform.localRotation = Quaternion.Euler(0,90f,0);
+            // }
+            var go = GameObject.Find("GamePlay/Level1");
+            var list = go.GetComponentsInChildren<Car>();
+
+            foreach (var carOne in list)
             {
-                var carObj = await CarManager.Instance.GetACar();
-                AddCar(carObj);
-                carObj.transform.position = new Vector3(44.5f, 0f, 44.5f + i);
-                carObj.transform.localRotation = Quaternion.Euler(0,90f,0);
+                AddCar(carOne);
             }
             
         }
@@ -52,6 +59,7 @@ namespace GameLogic
         /// </summary>
         public async UniTask StartGame()
         {
+            await UniTask.WaitForSeconds(1f);
             await InitField();
             await PlayEnterAnim();
             await StartTouch();

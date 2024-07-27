@@ -125,6 +125,9 @@ namespace GameLogic
             {
                 var wallType = other.GetComponent<Wall>().m_wallType;
                 SearchMoving(wallType,other.gameObject);
+            }else if (colType == 2)
+            {
+                
             }
         }
 
